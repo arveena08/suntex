@@ -1,0 +1,189 @@
+import { useState } from 'react';
+import { Phone, Mail, MapPin, Send, Clock } from 'lucide-react';
+import { Input } from '../components/ui/input';
+import { Textarea } from '../components/ui/textarea';
+import { Label } from '../components/ui/label';
+import { toast } from 'sonner';
+import ScrollReveal from '../components/ScrollReveal';
+import axios from 'axios';
+
+const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+
+const CONTACT_INFO = [
+  {
+    icon: MapPin,
+    title: 'Visit Us',
+    lines: ['Mumbai, Maharashtra', 'India'],
+  },
+  {
+    icon: Phone,
+    title: 'Call Us',
+    lines: ['+91 98000 00000'],
+  },
+  {
+    icon: Mail,
+    title: 'Email Us',
+    lines: ['info@suntextraders.com'],
+  },
+  {
+    icon: Clock,
+    title: 'Business Hours',
+    lines: ['Mon - Sat: 10:00 AM - 7:00 PM'],
+  },
+];
+
+export default function ContactPage() {
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [sending, setSending] = useState(false);
+
+  const handleChange = (e) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
+      toast.error('Please fill in all fields');
+      return;
+    }
+    setSending(true);
+    try {
+      await axios.post(`${API}/contact`, form);
+      toast.success('Message sent successfully! We will get back to you soon.');
+      setForm({ name: '', email: '', message: '' });
+    } catch (err) {
+      toast.error('Failed to send message. Please try again.');
+    } finally {
+      setSending(false);
+    }
+  };
+
+  return (
+    <main data-testid="contact-page">
+      {/* Hero */}
+      <section className="pt-32 pb-16 px-6">
+        <div className="max-w-7xl mx-auto text-center">
+          <p className="text-xs uppercase tracking-[0.3em] font-medium text-champagne mb-4 font-body animate-fade-in">
+            Get in Touch
+          </p>
+          <h1
+            className="font-heading text-5xl sm:text-6xl font-light tracking-tight text-white mb-4 animate-fade-up"
+            data-testid="contact-hero-title"
+          >
+            Contact Us
+          </h1>
+          <p className="text-base text-white/50 font-body font-light max-w-xl mx-auto animate-fade-up stagger-2">
+            Have a question or ready to place an order? We would love to hear from you.
+          </p>
+        </div>
+      </section>
+
+      {/* Contact Info Cards */}
+      <section className="px-6 pb-12" data-testid="contact-info-section">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {CONTACT_INFO.map((info, index) => (
+            <ScrollReveal key={info.title} delay={index * 0.1}>
+              <div
+                data-testid={`contact-info-card-${index}`}
+                className="p-6 border border-white/5 hover:border-champagne/20 transition-all duration-500 text-center group"
+              >
+                <info.icon className="w-6 h-6 text-champagne mx-auto mb-3 group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="text-xs uppercase tracking-[0.2em] font-medium text-white/80 mb-2 font-body">
+                  {info.title}
+                </h3>
+                {info.lines.map((line, i) => (
+                  <p key={i} className="text-sm text-white/40 font-body font-light">{line}</p>
+                ))}
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+      </section>
+
+      {/* Form + Map */}
+      <section className="px-6 pb-24" data-testid="contact-form-section">
+        <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-8">
+          {/* Contact Form */}
+          <ScrollReveal>
+            <div className="p-8 border border-white/5 bg-surface">
+              <h2 className="font-heading text-2xl sm:text-3xl font-light text-white mb-6">
+                Send Us a Message
+              </h2>
+              <form onSubmit={handleSubmit} className="space-y-5" data-testid="contact-form">
+                <div className="space-y-2">
+                  <Label htmlFor="name" className="text-xs uppercase tracking-[0.15em] text-white/60 font-body">
+                    Your Name
+                  </Label>
+                  <Input
+                    id="name"
+                    name="name"
+                    data-testid="contact-input-name"
+                    placeholder="Enter your name"
+                    value={form.name}
+                    onChange={handleChange}
+                    className="bg-obsidian border-white/10 text-white placeholder:text-white/20 focus:border-champagne/40 font-body font-light"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="email" className="text-xs uppercase tracking-[0.15em] text-white/60 font-body">
+                    Email Address
+                  </Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    data-testid="contact-input-email"
+                    placeholder="Enter your email"
+                    value={form.email}
+                    onChange={handleChange}
+                    className="bg-obsidian border-white/10 text-white placeholder:text-white/20 focus:border-champagne/40 font-body font-light"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="message" className="text-xs uppercase tracking-[0.15em] text-white/60 font-body">
+                    Message
+                  </Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    data-testid="contact-input-message"
+                    placeholder="Tell us about your requirements..."
+                    rows={5}
+                    value={form.message}
+                    onChange={handleChange}
+                    className="bg-obsidian border-white/10 text-white placeholder:text-white/20 focus:border-champagne/40 font-body font-light resize-none"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  disabled={sending}
+                  data-testid="contact-submit-btn"
+                  className="ripple-container w-full flex items-center justify-center gap-2 bg-champagne text-obsidian px-8 py-3 text-xs uppercase tracking-[0.2em] font-medium font-body hover:bg-champagne-light transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {sending ? 'Sending...' : 'Send Message'}
+                  <Send className="w-4 h-4" />
+                </button>
+              </form>
+            </div>
+          </ScrollReveal>
+
+          {/* Google Map */}
+          <ScrollReveal delay={0.15}>
+            <div className="border border-white/5 overflow-hidden h-full min-h-[400px]" data-testid="google-map">
+              <iframe
+                title="Suntex Traders Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609823277!2d72.74109995709657!3d19.08219783958221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) brightness(0.8) contrast(1.2)' }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+    </main>
+  );
+}
