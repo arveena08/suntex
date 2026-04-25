@@ -9,6 +9,8 @@ import AboutPage from '@/pages/AboutPage';
 import ProductsPage from '@/pages/ProductsPage';
 import ContactPage from '@/pages/ContactPage';
 
+import WhatsAppButton from '@/components/WhatsAppButton';
+
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -35,6 +37,7 @@ function Layout({ children }) {
           },
         }}
       />
+      <WhatsAppButton />
     </div>
   );
 }

@@ -37,14 +37,13 @@ export default function Navbar() {
         <Link
           to="/"
           data-testid="navbar-logo"
-          className="flex items-center gap-2 group"
+          className="flex items-center gap-3 group"
         >
-          <span className="font-heading text-2xl sm:text-3xl font-light tracking-tight text-white group-hover:text-champagne transition-colors duration-300">
-            Suntex
-          </span>
-          <span className="font-heading text-2xl sm:text-3xl font-light tracking-tight text-champagne">
-            Traders
-          </span>
+          <img
+            src="https://customer-assets.emergentagent.com/job_weave-showcase/artifacts/op0cvbp1_logo.enc"
+            alt="Suntex Traders Logo"
+            className="h-10 sm:h-12 w-auto object-contain"
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -90,7 +89,11 @@ export default function Navbar() {
           >
             <SheetHeader>
               <SheetTitle className="font-heading text-2xl font-light text-white">
-                <span className="text-champagne">Suntex</span> Traders
+                <img
+                  src="https://customer-assets.emergentagent.com/job_weave-showcase/artifacts/op0cvbp1_logo.enc"
+                  alt="Suntex Traders Logo"
+                  className="h-10 w-auto object-contain"
+                />
               </SheetTitle>
             </SheetHeader>
             <nav className="flex flex-col gap-6 mt-10">

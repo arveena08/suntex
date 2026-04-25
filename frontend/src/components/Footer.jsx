@@ -25,12 +25,14 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link to="/" className="inline-block mb-4">
-              <h3 className="font-heading text-2xl font-light text-white">
-                <span className="text-champagne">Suntex</span> Traders
-              </h3>
+              <img
+                src="https://customer-assets.emergentagent.com/job_weave-showcase/artifacts/op0cvbp1_logo.enc"
+                alt="Suntex Traders Logo"
+                className="h-12 w-auto object-contain"
+              />
             </Link>
             <p className="text-sm text-white/40 font-body font-light leading-relaxed">
-              Quality You Can Feel, Scale You Can Trust. Premium wholesale textiles for the fashion industry.
+              Your Dreams We Create. Premium wholesale textiles for the fashion industry since over 50 years.
             </p>
           </div>
 
@@ -82,7 +84,7 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-champagne mt-0.5 flex-shrink-0" />
                 <span className="text-sm text-white/40 font-body font-light">
-                  Mumbai, Maharashtra, India
+                  Surat, Gujarat, India
                 </span>
               </li>
               <li className="flex items-center gap-3">
