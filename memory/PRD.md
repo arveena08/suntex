@@ -31,8 +31,12 @@ Build a modern, responsive website for Suntex Traders, a textile wholesale compa
 - Contact form with POST /api/contact (MongoDB storage)
 - Sticky glassmorphism navbar with mobile Sheet drawer
 - Scroll reveal animations (Intersection Observer)
-- Google Maps embed on Contact page
+- Google Maps embed on Contact page (Surat, Gujarat)
 - Footer with quick links and contact info
+- Company logo integrated in navbar and footer
+- About page with real company content (50+ years, Surat, Kavish Chopra)
+- WhatsApp floating button for instant enquiries
+- Fabric-accurate product images (net mesh, cancan tulle, organza sheer, etc.)
 - All tests passing (100% backend + frontend)
 
 ## Prioritized Backlog
