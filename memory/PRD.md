@@ -24,19 +24,21 @@ Build a modern, responsive website for Suntex Traders, a textile wholesale compa
 - Scroll animations, Google Maps embed
 
 ## What's Been Implemented (April 2026)
-- Full 4-page React SPA with dark luxury theme
-- 13 products across 6 categories with flash card display
-- Product detail modals (Shadcn Dialog)
-- Category filter on Products page
-- Contact form with POST /api/contact (MongoDB storage)
+- Full 4-page React SPA with soft cream/teal theme
+- 13 products across 6 categories with flash card display (API-driven from MongoDB)
+- Product detail modals + Image lightbox with zoom for fabric textures
+- Category filtering on Products page
+- Contact form with POST /api/contact (MongoDB storage + mailto)
 - Sticky glassmorphism navbar with mobile Sheet drawer
-- Scroll reveal animations (Intersection Observer)
-- Google Maps embed on Contact page (Surat, Gujarat)
-- Footer with quick links and contact info
-- Company logo integrated in navbar and footer
+- Scroll reveal animations, Google Maps embed (Surat)
+- Company logo, WhatsApp button (+91 93747 39016)
 - About page with real company content (50+ years, Surat, Kavish Chopra)
-- WhatsApp floating button for instant enquiries
-- Fabric-accurate product images (net mesh, cancan tulle, organza sheer, etc.)
+- Decorative teal/gold border frame around viewport
+- **Admin Dashboard** (login: admin@suntextraders.com / janvi123):
+  - Contact message management (view, mark read/unread, delete, search)
+  - Product management (add, edit, delete, search)
+  - Stats overview (messages, products, categories)
+- JWT authentication for admin routes
 - All tests passing (100% backend + frontend)
 
 ## Prioritized Backlog
