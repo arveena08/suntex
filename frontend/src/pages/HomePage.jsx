@@ -30,38 +30,25 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src={HERO_IMAGE}
-            alt="Premium textile fabric"
-            className="w-full h-full object-cover"
-          />
+          <img src={HERO_IMAGE} alt="Premium textile fabric" className="w-full h-full object-cover" />
           <div className="absolute inset-0 hero-gradient" />
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-          <p
-            className="text-xs uppercase tracking-[0.3em] font-medium text-champagne mb-6 font-body animate-fade-in"
-            data-testid="hero-subtitle"
-          >
+          <p className="text-xs uppercase tracking-[0.3em] font-medium text-teal-dark mb-6 font-body animate-fade-in" data-testid="hero-subtitle">
             Premium Wholesale Textiles
           </p>
-          <h1
-            className="font-heading text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight leading-none text-white mb-6 animate-fade-up"
-            data-testid="hero-title"
-          >
+          <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight leading-none text-[#2D2D2D] mb-6 animate-fade-up" data-testid="hero-title">
             Suntex Traders
           </h1>
-          <p
-            className="font-body text-base sm:text-lg text-white/60 font-light tracking-wide max-w-xl mx-auto mb-10 animate-fade-up stagger-2"
-            data-testid="hero-tagline"
-          >
+          <p className="font-body text-base sm:text-lg text-[#2D2D2D]/60 font-light tracking-wide max-w-xl mx-auto mb-10 animate-fade-up stagger-2" data-testid="hero-tagline">
             Quality You Can Feel, Scale You Can Trust.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up stagger-3">
             <Link
               to="/products"
               data-testid="hero-explore-btn"
-              className="ripple-container group inline-flex items-center gap-2 bg-champagne text-obsidian px-8 py-3 text-xs uppercase tracking-[0.2em] font-medium font-body hover:bg-champagne-light transition-colors duration-300"
+              className="ripple-container group inline-flex items-center gap-2 bg-teal text-white px-8 py-3 text-xs uppercase tracking-[0.2em] font-medium font-body hover:bg-teal-dark transition-colors duration-300 rounded-sm"
             >
               Explore Collection
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
@@ -69,17 +56,16 @@ export default function HomePage() {
             <Link
               to="/contact"
               data-testid="hero-contact-btn"
-              className="inline-flex items-center gap-2 border border-white/20 text-white px-8 py-3 text-xs uppercase tracking-[0.2em] font-medium font-body hover:border-champagne/40 hover:text-champagne transition-all duration-300"
+              className="inline-flex items-center gap-2 border border-[#2D2D2D]/20 text-[#2D2D2D] px-8 py-3 text-xs uppercase tracking-[0.2em] font-medium font-body hover:border-teal hover:text-teal-dark transition-all duration-300 rounded-sm"
             >
               Get in Touch
             </Link>
           </div>
         </div>
 
-        {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-in stagger-5">
-          <span className="text-xs text-white/30 uppercase tracking-[0.2em] font-body">Scroll</span>
-          <div className="w-px h-8 bg-gradient-to-b from-champagne/50 to-transparent" />
+          <span className="text-xs text-[#2D2D2D]/30 uppercase tracking-[0.2em] font-body">Scroll</span>
+          <div className="w-px h-8 bg-gradient-to-b from-teal/50 to-transparent" />
         </div>
       </section>
 
@@ -88,7 +74,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal>
             <div className="section-divider mb-10" />
-            <p className="font-body text-base sm:text-lg text-white/50 font-light leading-relaxed tracking-wide">
+            <p className="font-body text-base sm:text-lg text-[#2D2D2D]/60 font-light leading-relaxed tracking-wide">
               Crafted in Surat's renowned textile legacy, we are a 50+ year old family-led house of fine fabrics.
               Under the direction of our management, we curate and manufacture exquisite dyed, embroidered, and
               plain textiles — from ethereal nets, cancan to refined organza, georgette, viscose &amp; more — serving
@@ -104,12 +90,8 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <p className="text-xs uppercase tracking-[0.3em] font-medium text-champagne mb-4 font-body">
-                Our Collection
-              </p>
-              <h2 className="font-heading text-3xl sm:text-4xl font-light tracking-tight text-white">
-                Explore Our Fabrics
-              </h2>
+              <p className="text-xs uppercase tracking-[0.3em] font-medium text-teal-dark mb-4 font-body">Our Collection</p>
+              <h2 className="font-heading text-3xl sm:text-4xl font-light tracking-tight text-[#2D2D2D]">Explore Our Fabrics</h2>
             </div>
           </ScrollReveal>
 
@@ -119,7 +101,7 @@ export default function HomePage() {
                 <Link
                   to={`/products?cat=${cat.id}`}
                   data-testid={`category-link-${cat.id}`}
-                  className="text-xs uppercase tracking-[0.15em] font-medium font-body border border-white/10 px-5 py-2 text-white/50 hover:border-champagne/30 hover:text-champagne transition-all duration-300"
+                  className="text-xs uppercase tracking-[0.15em] font-medium font-body border border-[#E5E0D8] px-5 py-2 text-[#2D2D2D]/50 hover:border-teal/40 hover:text-teal-dark transition-all duration-300 rounded-sm"
                 >
                   {cat.label}
                 </Link>
@@ -140,7 +122,7 @@ export default function HomePage() {
               <Link
                 to="/products"
                 data-testid="view-all-products-btn"
-                className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-medium font-body text-champagne border border-champagne/30 px-8 py-3 hover:bg-champagne hover:text-obsidian transition-all duration-300"
+                className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-medium font-body text-teal-dark border border-teal/30 px-8 py-3 hover:bg-teal hover:text-white transition-all duration-300 rounded-sm"
               >
                 View All Products
                 <ArrowRight className="w-4 h-4" />
@@ -150,7 +132,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Divider */}
       <div className="section-divider" />
 
       {/* Value Props */}
@@ -161,15 +142,11 @@ export default function HomePage() {
               <ScrollReveal key={prop.title} delay={index * 0.15}>
                 <div
                   data-testid={`value-prop-${index}`}
-                  className="text-center p-8 border border-white/5 hover:border-champagne/20 transition-all duration-500 group"
+                  className="text-center p-8 border border-[#E5E0D8] hover:border-teal/30 transition-all duration-500 group bg-white rounded-sm"
                 >
-                  <prop.icon className="w-8 h-8 text-champagne mx-auto mb-5 group-hover:scale-110 transition-transform duration-300" />
-                  <h3 className="font-heading text-xl sm:text-2xl font-medium text-white mb-3">
-                    {prop.title}
-                  </h3>
-                  <p className="text-sm text-white/40 font-body font-light leading-relaxed">
-                    {prop.description}
-                  </p>
+                  <prop.icon className="w-8 h-8 text-teal mx-auto mb-5 group-hover:scale-110 transition-transform duration-300" />
+                  <h3 className="font-heading text-xl sm:text-2xl font-medium text-[#2D2D2D] mb-3">{prop.title}</h3>
+                  <p className="text-sm text-[#2D2D2D]/50 font-body font-light leading-relaxed">{prop.description}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -179,32 +156,28 @@ export default function HomePage() {
 
       {/* CTA Banner */}
       <section className="py-24 px-6 relative overflow-hidden" data-testid="cta-section">
-        <div className="absolute inset-0 bg-surface" />
-        <div className="absolute inset-0 shimmer-bg" />
+        <div className="absolute inset-0 bg-[#8EB5B2]/10" />
         <div className="relative max-w-3xl mx-auto text-center">
           <ScrollReveal>
-            <p className="text-xs uppercase tracking-[0.3em] font-medium text-champagne mb-4 font-body">
-              Ready to Order?
-            </p>
-            <h2 className="font-heading text-3xl sm:text-4xl font-light tracking-tight text-white mb-6">
+            <p className="text-xs uppercase tracking-[0.3em] font-medium text-teal-dark mb-4 font-body">Ready to Order?</p>
+            <h2 className="font-heading text-3xl sm:text-4xl font-light tracking-tight text-[#2D2D2D] mb-6">
               Partner With Us for Premium Textiles
             </h2>
-            <p className="text-base text-white/40 font-body font-light leading-relaxed mb-10 max-w-xl mx-auto">
+            <p className="text-base text-[#2D2D2D]/50 font-body font-light leading-relaxed mb-10 max-w-xl mx-auto">
               Whether you need bulk orders or curated selections, we deliver quality fabrics at competitive wholesale prices.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 to="/contact"
                 data-testid="cta-contact-btn"
-                className="inline-flex items-center gap-2 bg-champagne text-obsidian px-8 py-3 text-xs uppercase tracking-[0.2em] font-medium font-body hover:bg-champagne-light transition-colors duration-300"
+                className="inline-flex items-center gap-2 bg-teal-dark text-white px-8 py-3 text-xs uppercase tracking-[0.2em] font-medium font-body hover:bg-teal transition-colors duration-300 rounded-sm"
               >
-                Request a Quote
-                <ArrowRight className="w-4 h-4" />
+                Request a Quote <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 to="/about"
                 data-testid="cta-about-btn"
-                className="inline-flex items-center gap-2 border border-white/20 text-white px-8 py-3 text-xs uppercase tracking-[0.2em] font-medium font-body hover:border-champagne/40 hover:text-champagne transition-all duration-300"
+                className="inline-flex items-center gap-2 border border-[#2D2D2D]/15 text-[#2D2D2D] px-8 py-3 text-xs uppercase tracking-[0.2em] font-medium font-body hover:border-teal hover:text-teal-dark transition-all duration-300 rounded-sm"
               >
                 Learn About Us
               </Link>

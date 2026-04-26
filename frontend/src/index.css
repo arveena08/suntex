@@ -11,8 +11,8 @@ body {
   font-family: 'Outfit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #0A0A0C;
-  color: #F5F5F7;
+  background-color: #F7F5F1;
+  color: #2D2D2D;
 }
 
 code {
@@ -21,31 +21,31 @@ code {
 
 @layer base {
   :root {
-    --background: 240 9% 3%;
-    --foreground: 240 20% 97%;
-    --card: 240 10% 8%;
-    --card-foreground: 240 20% 97%;
-    --popover: 240 10% 8%;
-    --popover-foreground: 240 20% 97%;
-    --primary: 47 65% 52%;
-    --primary-foreground: 240 9% 3%;
-    --secondary: 240 5% 16%;
-    --secondary-foreground: 240 20% 97%;
-    --muted: 240 5% 16%;
-    --muted-foreground: 240 4% 65%;
-    --accent: 4 75% 31%;
-    --accent-foreground: 240 20% 97%;
+    --background: 36 27% 96%;
+    --foreground: 0 0% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 18%;
+    --primary: 175 20% 63%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 38 22% 93%;
+    --secondary-foreground: 0 0% 18%;
+    --muted: 38 22% 93%;
+    --muted-foreground: 0 0% 54%;
+    --accent: 176 100% 18%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 240 20% 97%;
-    --border: 240 5% 16%;
-    --input: 240 5% 16%;
-    --ring: 47 65% 52%;
-    --chart-1: 47 65% 52%;
-    --chart-2: 4 75% 31%;
-    --chart-3: 240 10% 8%;
-    --chart-4: 240 4% 65%;
-    --chart-5: 45 73% 62%;
-    --radius: 0rem;
+    --destructive-foreground: 0 0% 100%;
+    --border: 33 18% 87%;
+    --input: 33 18% 87%;
+    --ring: 175 20% 63%;
+    --chart-1: 175 20% 63%;
+    --chart-2: 176 100% 18%;
+    --chart-3: 42 34% 66%;
+    --chart-4: 0 0% 54%;
+    --chart-5: 39 33% 66%;
+    --radius: 0.25rem;
   }
 }
 
@@ -94,18 +94,18 @@ code {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0A0A0C;
+  background: #F7F5F1;
 }
 ::-webkit-scrollbar-thumb {
-  background: #27272A;
+  background: #D4C49E;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #D4AF37;
+  background: #8EB5B2;
 }
 
 /* Selection color */
 ::selection {
-  background: rgba(212, 175, 55, 0.3);
-  color: #F5F5F7;
+  background: rgba(142, 181, 178, 0.3);
+  color: #2D2D2D;
 }

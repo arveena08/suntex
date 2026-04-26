@@ -21,18 +21,18 @@ function ScrollToTop() {
 
 function Layout({ children }) {
   return (
-    <div className="min-h-screen bg-obsidian">
+    <div className="min-h-screen bg-[#F7F5F1]">
       <Navbar />
       {children}
       <Footer />
       <Toaster
-        theme="dark"
+        theme="light"
         position="bottom-right"
         toastOptions={{
           style: {
-            background: '#141417',
-            border: '1px solid rgba(255,255,255,0.1)',
-            color: '#F5F5F7',
+            background: '#FFFFFF',
+            border: '1px solid #E5E0D8',
+            color: '#2D2D2D',
             fontFamily: 'Outfit, sans-serif',
           },
         }}

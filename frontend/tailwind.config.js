@@ -13,14 +13,19 @@ module.exports = {
                 },
                 colors: {
                         champagne: {
-                                DEFAULT: '#D4AF37',
-                                light: '#E5C158',
-                                dark: '#B8941E',
+                                DEFAULT: '#C7B58A',
+                                light: '#D4C49E',
+                                dark: '#B5A176',
                         },
-                        obsidian: '#0A0A0C',
-                        surface: '#141417',
-                        'surface-hover': '#1C1C21',
-                        crimson: '#8C1C13',
+                        teal: {
+                                DEFAULT: '#8EB5B2',
+                                light: '#B0CCC9',
+                                dark: '#005A54',
+                        },
+                        obsidian: '#F7F5F1',
+                        surface: '#FFFFFF',
+                        'surface-hover': '#F0EDE8',
+                        crimson: '#005A54',
                         background: 'hsl(var(--background))',
                         foreground: 'hsl(var(--foreground))',
                         card: {
@@ -89,8 +94,8 @@ module.exports = {
                                 '100%': { backgroundPosition: '200% 0' }
                         },
                         'glow-pulse': {
-                                '0%, 100%': { boxShadow: '0 0 20px rgba(212, 175, 55, 0.15)' },
-                                '50%': { boxShadow: '0 0 40px rgba(212, 175, 55, 0.3)' }
+                                '0%, 100%': { boxShadow: '0 0 20px rgba(142, 181, 178, 0.15)' },
+                                '50%': { boxShadow: '0 0 40px rgba(142, 181, 178, 0.3)' }
                         },
                         'slide-up': {
                                 '0%': { opacity: '0', transform: 'translateY(100%)' },
