@@ -13,22 +13,22 @@ const CONTACT_INFO = [
   {
     icon: MapPin,
     title: 'Visit Us',
-    lines: ['Surat, Gujarat', 'India'],
+    lines: ['541, Padmavati Textile Market', 'Ring Road, Surat, Gujarat, India'],
   },
   {
     icon: Phone,
     title: 'Call Us',
-    lines: ['+91 98000 00000'],
+    lines: ['Kavish Chopra', '+91 93747 39016'],
   },
   {
     icon: Mail,
     title: 'Email Us',
-    lines: ['info@suntextraders.com'],
+    lines: ['suntextraders@gmail.com'],
   },
   {
     icon: Clock,
     title: 'Business Hours',
-    lines: ['Mon - Sat: 10:00 AM - 7:00 PM'],
+    lines: ['Mon - Sat: 11:00 AM - 9:00 PM'],
   },
 ];
 
@@ -49,6 +49,10 @@ export default function ContactPage() {
     setSending(true);
     try {
       await axios.post(`${API}/contact`, form);
+      // Also send via mailto for direct email notification
+      const subject = encodeURIComponent(`Website Enquiry from ${form.name}`);
+      const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`);
+      window.open(`mailto:suntextraders@gmail.com?subject=${subject}&body=${body}`, '_self');
       toast.success('Message sent successfully! We will get back to you soon.');
       setForm({ name: '', email: '', message: '' });
     } catch (err) {

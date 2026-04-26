@@ -83,6 +83,22 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Intro Section */}
+      <section className="py-20 px-6" data-testid="intro-section">
+        <div className="max-w-4xl mx-auto text-center">
+          <ScrollReveal>
+            <div className="section-divider mb-10" />
+            <p className="font-body text-base sm:text-lg text-white/50 font-light leading-relaxed tracking-wide">
+              Crafted in Surat's renowned textile legacy, we are a 50+ year old family-led house of fine fabrics.
+              Under the direction of our management, we curate and manufacture exquisite dyed, embroidered, and
+              plain textiles — from ethereal nets, cancan to refined organza, georgette, viscose &amp; more — serving
+              discerning clients across India with unmatched quality and elegance.
+            </p>
+            <div className="section-divider mt-10" />
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Categories Section */}
       <section className="py-24 px-6" data-testid="categories-section">
         <div className="max-w-7xl mx-auto">

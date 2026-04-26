@@ -25,11 +25,13 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link to="/" className="inline-block mb-4">
-              <img
-                src="https://customer-assets.emergentagent.com/job_weave-showcase/artifacts/op0cvbp1_logo.enc"
-                alt="Suntex Traders Logo"
-                className="h-12 w-auto object-contain"
-              />
+              <div className="bg-white/95 rounded-sm p-1 inline-block">
+                <img
+                  src="https://customer-assets.emergentagent.com/job_weave-showcase/artifacts/op0cvbp1_logo.enc"
+                  alt="Suntex Traders Logo"
+                  className="h-10 w-auto object-contain"
+                />
+              </div>
             </Link>
             <p className="text-sm text-white/40 font-body font-light leading-relaxed">
               Your Dreams We Create. Premium wholesale textiles for the fashion industry since over 50 years.
@@ -84,19 +86,19 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-champagne mt-0.5 flex-shrink-0" />
                 <span className="text-sm text-white/40 font-body font-light">
-                  Surat, Gujarat, India
+                  541, Padmavati Textile Market, Ring Road, Surat, Gujarat, India
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-champagne flex-shrink-0" />
-                <a href="tel:+919800000000" className="text-sm text-white/40 hover:text-champagne transition-colors duration-300 font-body font-light">
-                  +91 98000 00000
+                <a href="tel:+919374739016" className="text-sm text-white/40 hover:text-champagne transition-colors duration-300 font-body font-light">
+                  +91 93747 39016
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-champagne flex-shrink-0" />
-                <a href="mailto:info@suntextraders.com" className="text-sm text-white/40 hover:text-champagne transition-colors duration-300 font-body font-light">
-                  info@suntextraders.com
+                <a href="mailto:suntextraders@gmail.com" className="text-sm text-white/40 hover:text-champagne transition-colors duration-300 font-body font-light">
+                  suntextraders@gmail.com
                 </a>
               </li>
             </ul>
