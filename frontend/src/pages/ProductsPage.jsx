@@ -1,26 +1,30 @@
-import { useState, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import ScrollReveal from '../components/ScrollReveal';
 import ProductCard from '../components/ProductCard';
-import { PRODUCTS, CATEGORIES } from '../data/products';
+import { CATEGORIES } from '../data/products';
+import axios from 'axios';
+
+const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 export default function ProductsPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const initialCat = searchParams.get('cat') || 'all';
   const [activeCategory, setActiveCategory] = useState(initialCat);
+  const [allProducts, setAllProducts] = useState([]);
+
+  useEffect(() => {
+    axios.get(`${API}/products`).then(({ data }) => setAllProducts(data)).catch(() => {});
+  }, []);
 
   const filteredProducts = useMemo(() => {
-    if (activeCategory === 'all') return PRODUCTS;
-    return PRODUCTS.filter(p => p.category === activeCategory);
-  }, [activeCategory]);
+    if (activeCategory === 'all') return allProducts;
+    return allProducts.filter(p => p.category === activeCategory);
+  }, [activeCategory, allProducts]);
 
   const handleCategoryChange = (catId) => {
     setActiveCategory(catId);
-    if (catId === 'all') {
-      setSearchParams({});
-    } else {
-      setSearchParams({ cat: catId });
-    }
+    if (catId === 'all') { setSearchParams({}); } else { setSearchParams({ cat: catId }); }
   };
 
   return (
@@ -42,8 +46,7 @@ export default function ProductsPage() {
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
             {CATEGORIES.map((cat) => (
               <button
-                key={cat.id}
-                data-testid={`filter-btn-${cat.id}`}
+                key={cat.id} data-testid={`filter-btn-${cat.id}`}
                 onClick={() => handleCategoryChange(cat.id)}
                 className={`text-xs uppercase tracking-[0.15em] font-medium font-body px-4 sm:px-5 py-2 border transition-all duration-300 rounded-sm ${
                   activeCategory === cat.id
@@ -67,16 +70,14 @@ export default function ProductsPage() {
               </ScrollReveal>
             ))}
           </div>
-
           {filteredProducts.length === 0 && (
             <div className="text-center py-20">
               <p className="text-[#2D2D2D]/30 font-body font-light">No products found in this category.</p>
             </div>
           )}
-
           <div className="text-center mt-10">
             <p className="text-xs text-[#2D2D2D]/30 font-body font-light uppercase tracking-[0.2em]">
-              Showing {filteredProducts.length} of {PRODUCTS.length} products
+              Showing {filteredProducts.length} of {allProducts.length} products
             </p>
           </div>
         </div>

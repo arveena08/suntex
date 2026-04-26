@@ -1,9 +1,11 @@
 import { useState, useCallback } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '../components/ui/dialog';
-import { Package, Palette, Layers } from 'lucide-react';
+import { Package, Palette, Layers, Maximize2 } from 'lucide-react';
+import ImageLightbox from './ImageLightbox';
 
 export default function ProductCard({ product, index = 0 }) {
   const [open, setOpen] = useState(false);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
   const [imgLoaded, setImgLoaded] = useState(false);
 
   const handleRipple = useCallback((e) => {
@@ -30,23 +32,26 @@ export default function ProductCard({ product, index = 0 }) {
         <div className="absolute inset-0 overflow-hidden">
           {!imgLoaded && <div className="absolute inset-0 bg-[#F0EDE8] shimmer-bg" />}
           <img
-            src={product.image}
-            alt={product.name}
-            loading="lazy"
+            src={product.image} alt={product.name} loading="lazy"
             onLoad={() => setImgLoaded(true)}
             className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${imgLoaded ? 'opacity-100' : 'opacity-0'}`}
           />
         </div>
 
+        {/* Zoom icon */}
+        <button
+          data-testid={`product-zoom-${product.id}`}
+          className="absolute top-3 right-3 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 hover:bg-white"
+          onClick={(e) => { e.stopPropagation(); setLightboxOpen(true); }}
+        >
+          <Maximize2 className="w-4 h-4 text-[#2D2D2D]" />
+        </button>
+
         <div className="absolute inset-0 product-card-overlay opacity-70 group-hover:opacity-95 transition-opacity duration-500" />
 
         <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-          <p className="text-xs uppercase tracking-[0.2em] font-medium text-teal-dark mb-2 font-body">
-            {product.category}
-          </p>
-          <h3 className="font-heading text-xl sm:text-2xl font-medium text-[#2D2D2D] mb-2">
-            {product.name}
-          </h3>
+          <p className="text-xs uppercase tracking-[0.2em] font-medium text-teal-dark mb-2 font-body">{product.category}</p>
+          <h3 className="font-heading text-xl sm:text-2xl font-medium text-[#2D2D2D] mb-2">{product.name}</h3>
           <p className="text-sm text-[#2D2D2D]/50 font-body font-light leading-relaxed line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
             {product.description}
           </p>
@@ -62,49 +67,39 @@ export default function ProductCard({ product, index = 0 }) {
         </div>
       </div>
 
+      {/* Product Detail Modal */}
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent
-          data-testid={`product-modal-${product.id}`}
-          className="sm:max-w-2xl bg-white border border-[#E5E0D8] p-0 overflow-hidden rounded-sm"
-        >
+        <DialogContent data-testid={`product-modal-${product.id}`} className="sm:max-w-2xl bg-white border border-[#E5E0D8] p-0 overflow-hidden rounded-sm">
           <div className="grid sm:grid-cols-2 gap-0">
-            <div className="aspect-square sm:aspect-auto overflow-hidden">
+            <div className="aspect-square sm:aspect-auto overflow-hidden relative cursor-pointer" onClick={() => { setOpen(false); setLightboxOpen(true); }}>
               <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/0 hover:bg-black/10 transition-colors">
+                <Maximize2 className="w-8 h-8 text-white opacity-0 hover:opacity-80 transition-opacity" />
+              </div>
             </div>
             <div className="p-6 flex flex-col justify-center">
               <DialogHeader>
-                <p className="text-xs uppercase tracking-[0.2em] font-medium text-teal-dark mb-1 font-body">
-                  {product.category}
-                </p>
-                <DialogTitle className="font-heading text-2xl sm:text-3xl font-light text-[#2D2D2D]">
-                  {product.name}
-                </DialogTitle>
-                <DialogDescription className="text-[#2D2D2D]/50 font-body font-light leading-relaxed mt-3">
-                  {product.description}
-                </DialogDescription>
+                <p className="text-xs uppercase tracking-[0.2em] font-medium text-teal-dark mb-1 font-body">{product.category}</p>
+                <DialogTitle className="font-heading text-2xl sm:text-3xl font-light text-[#2D2D2D]">{product.name}</DialogTitle>
+                <DialogDescription className="text-[#2D2D2D]/50 font-body font-light leading-relaxed mt-3">{product.description}</DialogDescription>
               </DialogHeader>
-
               <div className="mt-5 space-y-4">
                 <div className="flex items-start gap-3">
                   <Layers className="w-4 h-4 text-teal-dark mt-0.5 flex-shrink-0" />
                   <div>
                     <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#2D2D2D]/70 mb-1 font-body">Features</p>
                     <ul className="space-y-1">
-                      {product.features.map((f, i) => (
-                        <li key={i} className="text-sm text-[#2D2D2D]/50 font-body font-light">{f}</li>
-                      ))}
+                      {product.features?.map((f, i) => <li key={i} className="text-sm text-[#2D2D2D]/50 font-body font-light">{f}</li>)}
                     </ul>
                   </div>
                 </div>
-
                 <div className="flex items-start gap-3">
                   <Palette className="w-4 h-4 text-teal-dark mt-0.5 flex-shrink-0" />
                   <div>
                     <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#2D2D2D]/70 mb-1 font-body">Colors</p>
-                    <p className="text-sm text-[#2D2D2D]/50 font-body font-light">{product.colors.join(', ')}</p>
+                    <p className="text-sm text-[#2D2D2D]/50 font-body font-light">{product.colors?.join(', ')}</p>
                   </div>
                 </div>
-
                 <div className="flex items-start gap-3">
                   <Package className="w-4 h-4 text-teal-dark mt-0.5 flex-shrink-0" />
                   <div>
@@ -113,18 +108,17 @@ export default function ProductCard({ product, index = 0 }) {
                   </div>
                 </div>
               </div>
-
-              <a
-                data-testid={`product-enquire-btn-${product.id}`}
-                href="/contact"
-                className="mt-6 inline-block text-center text-xs uppercase tracking-[0.2em] font-medium font-body bg-teal text-white px-6 py-3 hover:bg-teal-dark transition-colors duration-300 rounded-sm"
-              >
+              <a data-testid={`product-enquire-btn-${product.id}`} href="/contact"
+                className="mt-6 inline-block text-center text-xs uppercase tracking-[0.2em] font-medium font-body bg-teal text-white px-6 py-3 hover:bg-teal-dark transition-colors duration-300 rounded-sm">
                 Enquire Now
               </a>
             </div>
           </div>
         </DialogContent>
       </Dialog>
+
+      {/* Lightbox */}
+      <ImageLightbox src={product.image} alt={product.name} open={lightboxOpen} onClose={() => setLightboxOpen(false)} />
     </>
   );
 }
