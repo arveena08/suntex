@@ -4,14 +4,14 @@ export const CATEGORIES = [
   { id: 'cancan', label: 'Cancan' },
   { id: 'organza', label: 'Organza' },
   { id: 'viscose', label: 'Viscose' },
-  { id: 'georgette', label: 'Georgette' },
+  { id: 'chinon', label: 'chinon' },
   { id: 'satin', label: 'Satin' },
 ];
 
 export const PRODUCTS = [
   {
     id: 1,
-    name: 'Dyed Net Fabric',
+    name: 'Dyed Mono Net Fabric',
     category: 'net',
     image: 'https://images.unsplash.com/photo-1634640243198-f1dddab5f677?w=800&q=80',
     description: 'Premium dyed net fabric available in a spectrum of rich colors. Ideal for overlays, gowns, and decorative draping.',
@@ -21,8 +21,8 @@ export const PRODUCTS = [
   },
   {
     id: 2,
-    name: 'Plain Net Fabric',
-    category: 'net',
+    name: 'Football Cancan Net Fabric',
+    category: 'cancan',
     image: 'https://images.unsplash.com/photo-1613132933857-e2f330cd44fb?w=800&q=80',
     description: 'Versatile plain net fabric with consistent weave quality. Perfect base for embroidery or standalone use in fashion garments.',
     features: ['Uniform mesh pattern', 'Easy to dye', 'Wrinkle-resistant', 'Consistent quality'],
@@ -31,8 +31,8 @@ export const PRODUCTS = [
   },
   {
     id: 3,
-    name: 'Embroidered Net',
-    category: 'net',
+    name: 'Organza Fabric',
+    category: 'organza',
     image: 'https://images.unsplash.com/photo-1590507673164-6c6d319f9b84?w=800&q=80',
     description: 'Intricately embroidered net fabric with floral and geometric patterns. Adds elegance to any garment or decor piece.',
     features: ['Handcrafted embroidery', 'Premium thread work', 'Designer patterns', 'Export quality'],
@@ -41,7 +41,7 @@ export const PRODUCTS = [
   },
   {
     id: 4,
-    name: 'Classic Cancan',
+    name: 'Classic Cancan Fabric',
     category: 'cancan',
     image: 'https://images.pexels.com/photos/6843277/pexels-photo-6843277.jpeg?auto=compress&cs=tinysrgb&w=800',
     description: 'Stiff, layered cancan fabric designed to add volume and structure beneath gowns, lehengas, and formal dresses.',
@@ -51,8 +51,8 @@ export const PRODUCTS = [
   },
   {
     id: 5,
-    name: 'Soft Cancan Net',
-    category: 'cancan',
+    name: 'Viscose Velvet Fabric',
+    category: 'viscose',
     image: 'https://images.pexels.com/photos/11189313/pexels-photo-11189313.jpeg?auto=compress&cs=tinysrgb&w=800',
     description: 'A softer variant of cancan with gentle structure for flowy silhouettes while still maintaining shape and body.',
     features: ['Soft hand feel', 'Moderate stiffness', 'Breathable', 'Multi-layer ready'],
@@ -71,8 +71,8 @@ export const PRODUCTS = [
   },
   {
     id: 7,
-    name: 'Dyed Organza',
-    category: 'organza',
+    name: '9000 Velvet Fabric',
+    category: 'viscose',
     image: 'https://images.pexels.com/photos/6843280/pexels-photo-6843280.jpeg?auto=compress&cs=tinysrgb&w=800',
     description: 'Richly dyed organza with a lustrous finish. The perfect choice for fashion-forward designs and decorative applications.',
     features: ['Lustrous sheen', 'Rich color palette', 'Lightweight drape', 'Easy to pleat'],
@@ -81,8 +81,8 @@ export const PRODUCTS = [
   },
   {
     id: 8,
-    name: 'Embroidered Viscose',
-    category: 'viscose',
+    name: 'Chinon Fabric',
+    category: 'chinon',
     image: 'https://images.unsplash.com/photo-1712212748773-39d4ea198be5?w=800&q=80',
     description: 'Soft viscose fabric with intricate embroidery work. Combines comfort with artistry for premium garments.',
     features: ['Ultra-soft texture', 'Breathable fabric', 'Detailed needlework', 'Skin-friendly'],
@@ -91,8 +91,8 @@ export const PRODUCTS = [
   },
   {
     id: 9,
-    name: 'Dyed Viscose',
-    category: 'viscose',
+    name: 'Embroidered Chinon fabric(400 butti)',
+    category: 'chinon',
     image: 'https://images.unsplash.com/photo-1632154670858-af875eb2716b?w=800&q=80',
     description: 'Luxuriously soft dyed viscose in deep, saturated colors. Excellent drape and comfort for everyday and formal wear.',
     features: ['Silky drape', 'Vibrant dyeing', 'Moisture-wicking', 'Anti-static'],
@@ -101,8 +101,8 @@ export const PRODUCTS = [
   },
   {
     id: 10,
-    name: 'Pure Georgette',
-    category: 'georgette',
+    name: 'Pure Viscose Cosmos Fabric',
+    category: 'cosmos',
     image: 'https://images.unsplash.com/photo-1636545672666-391bda04f4d0?w=800&q=80',
     description: 'Flowing pure georgette fabric with a signature crinkled texture. A staple for sarees, dupattas, and evening wear.',
     features: ['Signature crinkle', 'Flowing drape', 'Lightweight', 'Versatile styling'],
@@ -111,7 +111,7 @@ export const PRODUCTS = [
   },
   {
     id: 11,
-    name: 'Heavy Georgette',
+    name: 'Digital printed fabric',
     category: 'georgette',
     image: 'https://images.unsplash.com/photo-1642761689037-57424f3f80d2?w=800&q=80',
     description: 'A heavier variant of georgette offering more body and structure while retaining the classic georgette flow.',
@@ -121,7 +121,7 @@ export const PRODUCTS = [
   },
   {
     id: 12,
-    name: 'Silk Satin',
+    name: 'Fendi Fabric(plain or embroidered)',
     category: 'satin',
     image: 'https://images.unsplash.com/photo-1613132923869-7da356bf6ec6?w=800&q=80',
     description: 'Luxurious silk satin with a high-gloss finish. The ultimate choice for bridal wear, evening gowns, and luxury fashion.',
@@ -131,7 +131,7 @@ export const PRODUCTS = [
   },
   {
     id: 13,
-    name: 'Duchess Satin',
+    name: 'Butter Crepe Fabric (for lining)',
     category: 'satin',
     image: 'https://images.unsplash.com/photo-1617238793696-9035e7fc1825?w=800&q=80',
     description: 'Heavy-weight duchess satin with a subtle sheen and structured drape. Perfect for structured gowns and formal wear.',

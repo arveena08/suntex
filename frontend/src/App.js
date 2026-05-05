@@ -36,12 +36,12 @@ function App() {
     <div className="min-h-screen bg-[#F7F5F1] relative">
       {/* Decorative border frame */}
       <div className="fixed inset-0 pointer-events-none z-[55]" aria-hidden="true">
-        <div className="absolute inset-2 sm:inset-3 border border-[#8EB5B2]/25 rounded-sm" />
-        {/* Corner accents */}
-        <div className="absolute top-2 left-2 sm:top-3 sm:left-3 w-6 h-6 border-t-2 border-l-2 border-[#C7B58A]/40 rounded-tl-sm" />
-        <div className="absolute top-2 right-2 sm:top-3 sm:right-3 w-6 h-6 border-t-2 border-r-2 border-[#C7B58A]/40 rounded-tr-sm" />
-        <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 w-6 h-6 border-b-2 border-l-2 border-[#C7B58A]/40 rounded-bl-sm" />
-        <div className="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 w-6 h-6 border-b-2 border-r-2 border-[#C7B58A]/40 rounded-br-sm" />
+        <div className="absolute inset-2 sm:inset-3 border-2 border-[#8EB5B2]/40 rounded-sm" />
+        {/* Corner accents - larger and more visible */}
+        <div className="absolute top-2 left-2 sm:top-3 sm:left-3 w-10 h-10 border-t-[3px] border-l-[3px] border-[#C7B58A]/70 rounded-tl-sm" />
+        <div className="absolute top-2 right-2 sm:top-3 sm:right-3 w-10 h-10 border-t-[3px] border-r-[3px] border-[#C7B58A]/70 rounded-tr-sm" />
+        <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 w-10 h-10 border-b-[3px] border-l-[3px] border-[#C7B58A]/70 rounded-bl-sm" />
+        <div className="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 w-10 h-10 border-b-[3px] border-r-[3px] border-[#C7B58A]/70 rounded-br-sm" />
       </div>
 
       <BrowserRouter>
