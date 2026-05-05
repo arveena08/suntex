@@ -29,7 +29,7 @@ export default function Navbar() {
     <header
       data-testid="navbar"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'nav-glass py-3' : 'bg-white/70 backdrop-blur-sm py-4 border-b border-[#E5E0D8]/50'
+        scrolled ? 'nav-glass py-3' : 'bg-transparent py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
