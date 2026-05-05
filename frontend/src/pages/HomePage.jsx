@@ -47,13 +47,13 @@ export default function HomePage() {
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-          <p className="text-xs uppercase tracking-[0.3em] font-medium text-teal-dark mb-6 font-body animate-fade-in" data-testid="hero-subtitle">
+          <p className="text-xs uppercase tracking-[0.3em] font-semibold text-teal-dark mb-6 font-body animate-fade-in" data-testid="hero-subtitle">
             Premium Wholesale Textiles
           </p>
-          <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight leading-none text-[#2D2D2D] mb-6 animate-fade-up" data-testid="hero-title">
+          <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-medium tracking-tight leading-none text-[#2D2D2D] mb-6 animate-fade-up" data-testid="hero-title">
             Suntex Traders
           </h1>
-          <p className="font-body text-base sm:text-lg text-[#2D2D2D]/60 font-light tracking-wide max-w-xl mx-auto mb-10 animate-fade-up stagger-2" data-testid="hero-tagline">
+          <p className="font-body text-base sm:text-lg text-[#2D2D2D]/70 font-normal tracking-wide max-w-xl mx-auto mb-10 animate-fade-up stagger-2" data-testid="hero-tagline">
             Quality You Can Feel, Scale You Can Trust.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up stagger-3">
@@ -68,7 +68,7 @@ export default function HomePage() {
             <Link
               to="/contact"
               data-testid="hero-contact-btn"
-              className="inline-flex items-center gap-2 border border-[#2D2D2D]/20 text-[#2D2D2D] px-8 py-3 text-xs uppercase tracking-[0.2em] font-medium font-body hover:border-teal hover:text-teal-dark transition-all duration-300 rounded-sm"
+              className="inline-flex items-center gap-2 border-2 border-[#2D2D2D]/30 text-[#2D2D2D] px-8 py-3 text-xs uppercase tracking-[0.2em] font-medium font-body hover:border-teal hover:text-teal-dark transition-all duration-300 rounded-sm"
             >
               Get in Touch
             </Link>
