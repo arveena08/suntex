@@ -1,0 +1,132 @@
+[
+  {
+    "id": "p1",
+    "name": "Nylon Mono Net Fabric",
+    "category": "net",
+    "image": "/assets/nylon-mono-net.jpg",
+    "description": "Premium mono net fabric available in a spectrum of rich colors. Combining a sleek, smooth texture with industry-leading color retention and shrinkage resistance.",
+    "features": ["Vibrant color retention", "Lightweight & breathable", "Multiple GSM options", "Sleek smooth texture"],
+    "colors": ["Black", "Navy", "Burgundy", "Ivory", "Gold"],
+    "minOrder": "100 meters"
+  },
+  {
+    "id": "p2",
+    "name": "Cancan Net Fabric",
+    "category": "cancan",
+    "image": "/assets/cancan-net.jpg",
+    "description": "Stiff, durable nylon or polyester mesh used primarily to create volume, structure, and a voluminous flared silhouette in ethnic and formal wear.",
+    "features": ["High stiffness", "Volume-enhancing", "Durable mesh", "Crease-resistant"],
+    "colors": ["White", "Black", "Red", "Pink", "Cream"],
+    "minOrder": "100 meters"
+  },
+  {
+    "id": "p3",
+    "name": "Football Net",
+    "category": "cancan",
+    "image": "/assets/football-net.jpg",
+    "description": "Rigid, stiff polyester netting used primarily in garment manufacturing to add structure, volume, and flare to lehengas.",
+    "features": ["Rigid structure", "44 to 60 inch width", "Polyester netting", "High flare"],
+    "colors": ["White", "Ivory", "Black"],
+    "minOrder": "100 meters"
+  },
+  {
+    "id": "p4",
+    "name": "Organza Fabric",
+    "category": "organza",
+    "image": "/assets/organza-fabric.jpg",
+    "description": "Lightweight, sheer, and plain-weave fabric. Stands out for its exceptional finish, smooth texture, and vibrant color options.",
+    "features": ["Sheer elegance", "Smooth texture", "Vibrant colors", "Lightweight drape"],
+    "colors": ["Wine", "Emerald", "Sapphire", "Champagne", "Rose"],
+    "minOrder": "100 meters"
+  },
+  {
+    "id": "p5",
+    "name": "Viscose Velvet",
+    "category": "viscose",
+    "image": "/assets/viscose-velvet.jpg",
+    "description": "Luxurious fabric known for its exceptionally soft, plush texture and elegant, shimmering finish. Offers a fluid drape perfect for evening gowns.",
+    "features": ["Plush texture", "Shimmering finish", "Fluid drape", "High-end feel"],
+    "colors": ["Teal", "Rust", "Olive", "Burgundy", "Charcoal"],
+    "minOrder": "100 meters"
+  },
+  {
+    "id": "p6",
+    "name": "Embroidered Organza",
+    "category": "organza",
+    "image": "/assets/embroidered-organza.jpg",
+    "description": "Sheer organza fabric adorned with delicate embroidery. Ideal for dupattas, sarees, and bridal ensembles.",
+    "features": ["Detailed needlework", "Crisp finish", "Bridal-grade", "Designer patterns"],
+    "colors": ["Pastel shades", "Gold", "White", "Peach"],
+    "minOrder": "50 meters"
+  },
+  {
+    "id": "p7",
+    "name": "9000 Velvet",
+    "category": "viscose",
+    "image": "/assets/9000-velvet.jpg",
+    "description": "Micro 9000 premium velvet designed for winter-ready warmth. Characterized by ultra-soft texture and sophisticated luster.",
+    "features": ["Winter warmth", "Micro 9000 quality", "Sophisticated luster", "Durable"],
+    "colors": ["Deep shades", "Jewel tones", "Neutrals"],
+    "minOrder": "100 meters"
+  },
+  {
+    "id": "p8",
+    "name": "Chinon Fabric",
+    "category": "viscose",
+    "image": "/assets/chinon-fabric.jpg",
+    "description": "Lightweight and breathable textile known for soft texture and delicate sheen. A durable variation of chiffon.",
+    "features": ["Soft hand feel", "Delicate sheen", "Excellent drape", "Durable"],
+    "colors": ["Earth tones", "Pastels", "Vibrant hues"],
+    "minOrder": "100 meters"
+  },
+  {
+    "id": "p9",
+    "name": "Digital Print Fabric",
+    "category": "georgette",
+    "image": "/assets/digital-print.jpg",
+    "description": "High level of detail and color accuracy featuring botanical watercolors to sharp geometric abstracts.",
+    "features": ["High color accuracy", "Intricate detail", "Unlimited designs", "Flowy texture"],
+    "colors": ["Multi-color", "Custom prints"],
+    "minOrder": "100 meters"
+  },
+  {
+    "id": "p10",
+    "name": "Fendi Fabric",
+    "category": "satin",
+    "image": "/assets/fendi-fabric.jpg",
+    "description": "celebrated for its signature lustrous finish and sophisticated sheen. Offers a radiant look that feels modern.",
+    "features": ["Lustrous finish", "High-fashion glow", "Timeless glamor", "Smooth feel"],
+    "colors": ["Gold", "Champagne", "Silver", "Black"],
+    "minOrder": "50 meters"
+  },
+  {
+    "id": "p11",
+    "name": "Pure Viscose Cosmos",
+    "category": "viscose",
+    "image": "/assets/viscose-cosmos.jpg",
+    "description": "Luxurious, lightweight textile with a shimmering metallic gold finish often termed 'Viscose Tissue Cosmos'.",
+    "features": ["Metallic gold finish", "Smooth drape", "Soft hand-feel", "Bridal quality"],
+    "colors": ["Gold", "Rose Gold", "Silver"],
+    "minOrder": "50 meters"
+  },
+  {
+    "id": "p12",
+    "name": "Butter Crepe Fabric",
+    "category": "satin",
+    "image": "/assets/butter-crepe.jpg",
+    "description": "Polyester-based textile prized for soft texture and silk-like appearance. Wrinkle-resistant and easy to maintain.",
+    "features": ["Silk-like appearance", "Wrinkle-resistant", "Graceful drape", "Easy maintenance"],
+    "colors": ["Ivory", "Nude", "Pastels", "White"],
+    "minOrder": "100 meters"
+  },
+  {
+    "id": "p13",
+    "name": "Embroidered Fabric",
+    "category": "georgette",
+    "image": "/assets/embroidered.jpg",
+    "description": "Detailed embroidery available across all fabric bases including organza, viscose, and velvet.",
+    "features": ["Versatile base", "Premium thread work", "Custom patterns", "Export quality"],
+    "colors": ["Gold thread", "Silver thread", "Matching base"],
+    "minOrder": "50 meters"
+  }
+]
