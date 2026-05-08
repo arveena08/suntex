@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/suntex/static/css/main.c75f9a70.css",
-    "main.js": "/suntex/static/js/main.422452b4.js",
+    "main.js": "/suntex/static/js/main.437e142c.js",
     "index.html": "/suntex/index.html",
     "main.c75f9a70.css.map": "/suntex/static/css/main.c75f9a70.css.map",
-    "main.422452b4.js.map": "/suntex/static/js/main.422452b4.js.map"
+    "main.437e142c.js.map": "/suntex/static/js/main.437e142c.js.map"
   },
   "entrypoints": [
     "static/css/main.c75f9a70.css",
-    "static/js/main.422452b4.js"
+    "static/js/main.437e142c.js"
   ]
 }
