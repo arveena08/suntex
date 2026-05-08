@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Target, Eye, Shield, Gem, Handshake, Globe } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 
-const HERO_IMAGE = 'https://images.unsplash.com/photo-1617914169135-cc2513cc64c1?w=1600&q=80';
+const HERO_IMAGE = '/assets/abouthero.jpg';
 
 const WHY_CHOOSE = [
   {
@@ -82,7 +82,7 @@ export default function AboutPage() {
               <div className="space-y-4">
                 <div className="aspect-[4/5] overflow-hidden border border-[#E5E0D8] rounded-sm">
                   <img
-                    src="https://images.unsplash.com/photo-1634640249833-7307e385f148?w=800&q=80"
+                    src="/assets/abouthero1.jpg"
                     alt="Net fabric craftsmanship"
                     className="w-full h-full object-cover"
                   />
