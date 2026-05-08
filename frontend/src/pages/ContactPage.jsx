@@ -51,7 +51,7 @@ export default function ContactPage() {
 
   try {
     // We send the data to Formspree instead of our own database
-    const response = await fetch("https://formspree.io/f/YOUR_FORM_ID_HERE", {
+    const response = await fetch("https://formspree.io/f/mjglakpk", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
