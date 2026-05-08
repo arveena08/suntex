@@ -1,21 +1,29 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import ScrollReveal from '../components/ScrollReveal';
 import ProductCard from '../components/ProductCard';
-import { CATEGORIES } from '../data/products';
-import axios from 'axios';
 
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+
+import allProductsData from '../data/products.json';
+const CATEGORIES = [
+{ id: 'all', label: 'All Fabrics' },
+{ id: 'net', label: 'Net' },
+{ id: 'cancan', label: 'Cancan' },
+{ id: 'organza', label: 'Organza' },
+{ id: 'viscose', label: 'Viscose' },
+{ id: 'georgette', label: 'Georgette' },
+{ id: 'satin', label: 'Satin' }
+];
+
+
 
 export default function ProductsPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const initialCat = searchParams.get('cat') || 'all';
   const [activeCategory, setActiveCategory] = useState(initialCat);
-  const [allProducts, setAllProducts] = useState([]);
+  const [allProducts, setAllProducts] = useState(allProductsData);
 
-  useEffect(() => {
-    axios.get(`${API}/products`).then(({ data }) => setAllProducts(data)).catch(() => {});
-  }, []);
+  
 
   const filteredProducts = useMemo(() => {
     if (activeCategory === 'all') return allProducts;
