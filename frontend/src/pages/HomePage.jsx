@@ -3,11 +3,19 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles, Award, Truck } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 import ProductCard from '../components/ProductCard';
-import { CATEGORIES } from '../data/products';
-import axios from 'axios';
 
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
-const HERO_IMAGE = 'https://images.unsplash.com/photo-1683140426885-6c0ce899409c?w=1600&q=80';
+const CATEGORIES = [
+{ id: 'all', label: 'All Fabrics' },
+{ id: 'net', label: 'Net' },
+{ id: 'cancan', label: 'Cancan' },
+{ id: 'organza', label: 'Organza' },
+{ id: 'viscose', label: 'Viscose' },
+{ id: 'georgette', label: 'Georgette' },
+{ id: 'satin', label: 'Satin' }
+];
+
+import allProductsData from '../data/products.json';
+const HERO_IMAGE = '/assets/homepagehero.jpg';
 const FEATURED_IDS = ['p1', 'p4', 'p6', 'p9', 'p10', 'p12'];
 
 const VALUE_PROPS = [
@@ -29,13 +37,10 @@ const VALUE_PROPS = [
 ];
 
 export default function HomePage() {
-  const [featuredProducts, setFeaturedProducts] = useState([]);
-
-  useEffect(() => {
-    axios.get(`${API}/products`).then(({ data }) => {
-      setFeaturedProducts(data.filter(p => FEATURED_IDS.includes(p.id)).slice(0, 6));
-    }).catch(() => {});
-  }, []);
+  //const [featuredProducts, setFeaturedProducts] = useState([]);
+  const [featuredProducts] = useState(
+  allProductsData.filter(p => FEATURED_IDS.includes(p.id)).slice(0, 6)
+);
 
   return (
     <main data-testid="home-page">
