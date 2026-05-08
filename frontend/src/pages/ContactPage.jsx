@@ -5,9 +5,9 @@ import { Textarea } from '../components/ui/textarea';
 import { Label } from '../components/ui/label';
 import { toast } from 'sonner';
 import ScrollReveal from '../components/ScrollReveal';
-import axios from 'axios';
 
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+
+
 
 const CONTACT_INFO = [
   {
@@ -39,26 +39,36 @@ export default function ContactPage() {
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+  
+  if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
+    toast.error('Please fill in all fields');
+    return;
+  }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
-      toast.error('Please fill in all fields');
-      return;
-    }
-    setSending(true);
-    try {
-      await axios.post(`${API}/contact`, form);
-      const subject = encodeURIComponent(`Website Enquiry from ${form.name}`);
-      const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`);
-      window.open(`mailto:suntextraders@gmail.com?subject=${subject}&body=${body}`, '_self');
+  setSending(true);
+
+  try {
+    // We send the data to Formspree instead of our own database
+    const response = await fetch("https://formspree.io/f/YOUR_FORM_ID_HERE", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
+
+    if (response.ok) {
       toast.success('Message sent successfully! We will get back to you soon.');
       setForm({ name: '', email: '', message: '' });
-    } catch (err) {
-      toast.error('Failed to send message. Please try again.');
-    } finally {
-      setSending(false);
+    } else {
+      throw new Error();
     }
+  } catch (err) {
+    toast.error('Failed to send message. Please try again.');
+  } finally {
+    setSending(false);
+  }
+  
   };
 
   return (
